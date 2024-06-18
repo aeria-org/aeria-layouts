@@ -1,9 +1,7 @@
 {
   "name": "aeria-layouts",
-  "version": "0.0.0",
-  "description": "",
-  "keywords": [],
-  "author": "",
+  "private": true,
+  "packageManager": "pnpm@9.1.0",
   "license": "ISC",
   "scripts": {
     "postinstall": "husky; find packages -mindepth 1 -maxdepth 1 | xargs -n1 cp -r .aeria-ui; rm -rf .aeria-ui"

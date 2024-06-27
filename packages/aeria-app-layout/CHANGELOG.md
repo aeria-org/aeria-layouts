@@ -1,5 +1,11 @@
 # aeria-app-layout
 
+## 0.0.38
+
+### Patch Changes
+
+- dfa84df: Update versions
+
 ## 0.0.37
 
 ### Patch Changes

@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import { type MenuSchema, useNavbar } from '@aeria-ui/core'
+import { useNavbar, type MenuSchema, type Ref } from '@aeria-ui/core'
 import { useStore, getGlobalStateManager } from '@aeria-ui/state-management'
 import { t } from '@aeria-ui/i18n'
-import { inject, computed, onMounted } from 'vue'
+import { inject, computed, watch, unref } from 'vue'
 import { AeriaIcon, AeriaContextMenu, AeriaPicture, AeriaBadge } from '@aeria-ui/ui'
 
 import {
@@ -16,16 +16,18 @@ import {
 import NavbarEntry from '../navbar-entry/navbar-entry.vue'
 import NavbarEntries from '../navbar-entries/navbar-entries.vue'
 
-const menuSchema = inject<MenuSchema>('menuSchema', [])
+const menuSchema = inject<MenuSchema | Ref<MenuSchema>>('menuSchema', [])
 
 const metaStore = useStore('meta')
 const userStore = useStore('user')
 
 const manager = getGlobalStateManager()
 
-onMounted(async () => {
-  const navbar = await useNavbar({ schema: menuSchema })
+watch(() => menuSchema, async () => {
+  const navbar = await useNavbar({ schema: unref(menuSchema) })
   Object.assign(navbarRefs, navbar)
+}, {
+  immediate: true,
 })
 
 const logoUrl = new URL('/logo.png', import.meta.url).href

@@ -1,5 +1,11 @@
 # aeria-app-layout
 
+## 0.0.39
+
+### Patch Changes
+
+- 75b2543: Update navbar
+
 ## 0.0.38
 
 ### Patch Changes

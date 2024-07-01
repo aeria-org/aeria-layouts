@@ -1,5 +1,11 @@
 # aeria-app-layout
 
+## 0.0.40
+
+### Patch Changes
+
+- 4c65e3f: Update versions
+
 ## 0.0.39
 
 ### Patch Changes

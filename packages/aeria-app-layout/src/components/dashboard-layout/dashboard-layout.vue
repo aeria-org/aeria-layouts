@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import { useNavbar, type MenuSchema, type Ref } from '@aeria-ui/core'
+import { useNavbar, type MenuSchema } from '@aeria-ui/core'
 import { useStore, getGlobalStateManager } from '@aeria-ui/state-management'
 import { t } from '@aeria-ui/i18n'
-import { inject, computed, watch, unref } from 'vue'
+import { inject, computed, watch, unref, type Ref } from 'vue'
 import { AeriaIcon, AeriaContextMenu, AeriaPicture, AeriaBadge } from '@aeria-ui/ui'
 
 import {
@@ -11,7 +11,7 @@ import {
   routes,
   pushRoute,
   routeClick,
-} from '../utils'
+} from '../utils.js'
 
 import NavbarEntry from '../navbar-entry/navbar-entry.vue'
 import NavbarEntries from '../navbar-entries/navbar-entries.vue'

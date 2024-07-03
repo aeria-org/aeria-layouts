@@ -1,5 +1,11 @@
 # aeria-app-layout
 
+## 0.0.41
+
+### Patch Changes
+
+- 8517ede: Update slots
+
 ## 0.0.40
 
 ### Patch Changes

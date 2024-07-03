@@ -1,15 +1,16 @@
 {
   "name": "aeria-app-layout",
+  "type": "module",
   "version": "0.0.39",
   "description": "",
-  "main": "dist/aeria-app-layout.mjs",
+  "main": "dist/aeria-app-layout.js",
   "types": "dist/index.d.ts",
   "scripts": {
     "build": "vue-tsc --noEmit && vite build",
     "prepublishOnly": "npm run build"
   },
   "exports": {
-    ".": "./dist/aeria-app-layout.mjs",
+    ".": "./dist/aeria-app-layout.js",
     "./style.css": "./dist/style.css"
   },
   "files": [

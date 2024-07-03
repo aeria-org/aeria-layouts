@@ -1,4 +1,5 @@
 import { defineConfig } from 'vite'
+import { fileURLToPath } from 'node:url'
 import path from 'path'
 import vue from '@vitejs/plugin-vue'
 import dts from 'vite-plugin-dts'
@@ -6,7 +7,7 @@ import dts from 'vite-plugin-dts'
 export default defineConfig({
   resolve: {
     alias: {
-      'bson': require.resolve('bson'),
+      'bson': fileURLToPath(new URL('bson.cjs', import.meta.resolve('bson'))),
     }
   },
   plugins: [

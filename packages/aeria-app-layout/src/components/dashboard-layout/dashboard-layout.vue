@@ -128,8 +128,12 @@ const parentRoutes = computed(() => {
         <div class="dashboard__topbar-separator"></div>
 
         <slot
-          v-if="$slots.super"
+          v-if="$slots.super && breakpoints.md"
           name="super"
+        ></slot>
+        <slot
+          v-else-if="$slots['super-mobile']"
+          name="super-mobile"
         ></slot>
 
         <aeria-context-menu>
@@ -143,7 +147,9 @@ const parentRoutes = computed(() => {
               class="dashboard__user-picture"
             ></aeria-picture>
 
-            <div>Olá, {{ currentUser.name.split(' ')[0] }}</div>
+            <div v-if="breakpoints.md">
+              Olá, {{ currentUser.name.split(' ')[0] }}
+            </div>
           </div>
 
           <template #header>

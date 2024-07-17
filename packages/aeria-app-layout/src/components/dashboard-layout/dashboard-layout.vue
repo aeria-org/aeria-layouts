@@ -175,7 +175,7 @@ const parentRoutes = computed(() => {
               icon="user-square"
               @click="pushRoute(manager, '/dashboard/user/profile')"
             >
-              Perfil
+              {{ t('Profile') }}
             </aeria-icon>
           </template>
 
@@ -184,7 +184,7 @@ const parentRoutes = computed(() => {
               icon="sign-out"
               @click="pushRoute(manager, '/user/signin').then(() => userStore.$actions.signout())"
             >
-              Sair
+              {{ t('action.signout') }}
             </aeria-icon>
           </template>
         </aeria-context-menu>

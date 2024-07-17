@@ -148,7 +148,7 @@ const parentRoutes = computed(() => {
             ></aeria-picture>
 
             <div v-if="breakpoints.md">
-              Olá, {{ currentUser.name.split(' ')[0] }}
+              {{ t('Hello') }}, {{ currentUser.name.split(' ')[0] }}
             </div>
           </div>
 

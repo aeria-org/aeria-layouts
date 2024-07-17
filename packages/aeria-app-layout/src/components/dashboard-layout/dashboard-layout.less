@@ -1,5 +1,3 @@
-@topbar-height: 4.5rem;
-
 .outer-padding {
   padding: 1.4rem;
 
@@ -61,7 +59,7 @@
   }
 
   &__navbar-top {
-    height: @topbar-height;
+    height: var(--theme-panel-header-height);
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -94,7 +92,7 @@
     position: sticky;
     top: 0;
     left: 0;
-    height: @topbar-height;
+    height: var(--theme-panel-header-height);
     display: flex;
     align-items: center;
     gap: 1.8rem;
@@ -169,6 +167,6 @@
     display: flex;
     flex-direction: column;
     flex: 1;
+    min-height: 100vh;
   }
-
 }

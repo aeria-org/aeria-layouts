@@ -1,43 +1,27 @@
 <script setup lang="ts">
-import { useNavbar, type meta, type user, type MenuSchema } from '@aeria-ui/core'
-import { useStore, getGlobalStateManager } from '@aeria-ui/state-management'
+import type { meta, user } from '@aeria-ui/core'
+import { useStore } from '@aeria-ui/state-management'
 import { t } from '@aeria-ui/i18n'
-import { inject, computed, watch, unref, type Ref } from 'vue'
+import { computed } from 'vue'
+import { initTheme, breakpoints, routes, pushRoute, routeClick } from '@aeria-ui/theme'
 import { AeriaIcon, AeriaContextMenu, AeriaPicture, AeriaBadge } from '@aeria-ui/ui'
-
-import {
-  breakpoints,
-  navbarRefs,
-  routes,
-  pushRoute,
-  routeClick,
-} from '../utils.js'
 
 import NavbarEntry from '../navbar-entry/navbar-entry.vue'
 import NavbarEntries from '../navbar-entries/navbar-entries.vue'
 
-const menuSchema = inject<MenuSchema | Ref<MenuSchema>>('menuSchema', [])
-
 const metaStore = useStore('meta') as ReturnType<typeof meta>
 const userStore = useStore('user') as ReturnType<typeof user>
 
-const manager = getGlobalStateManager()
-
-watch(() => menuSchema, async () => {
-  const navbar = await useNavbar({ schema: unref(menuSchema) })
-  Object.assign(navbarRefs, navbar)
-}, {
-  immediate: true,
-})
+const { manager } = initTheme()
 
 const logoUrl = new URL('/logo.png', import.meta.url).href
 
 const topLevelRoutes = computed(() => {
-  return routes.value.filter((route) => route.children.length === 0)
+  return routes.value.filter((route) => !route.children || route.children.length === 0)
 })
 
 const parentRoutes = computed(() => {
-  return routes.value.filter((route) => route.children.length > 0)
+  return routes.value.filter((route) => route.children && route.children.length > 0)
 })
 </script>
 

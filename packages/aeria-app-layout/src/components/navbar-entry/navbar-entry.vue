@@ -3,15 +3,15 @@ import type { RouteRecordRaw } from 'vue-router'
 import type { MenuNode } from 'aeria-ui'
 import { t } from '@aeria-ui/i18n'
 import { AeriaIcon, AeriaBadge, AeriaAsync } from '@aeria-ui/ui'
-import { isCurrent, memoizeBadge, isCollapsibleRouteOpen } from '../utils.js'
+import { isCurrent, memoizeBadge, isCollapsibleRouteOpen } from '@aeria-ui/theme'
 
 type Props = {
-  item: MenuNode & RouteRecordRaw
+  item: MenuNode
   memoKey: string
   level?: number
 }
 
-const props = withDefaults(defineProps<Props>(), {
+withDefaults(defineProps<Props>(), {
   level: 0
 })
 </script>
@@ -49,3 +49,4 @@ const props = withDefaults(defineProps<Props>(), {
 </template>
 
 <style scoped src="./navbar-entry.less"></style>
+

@@ -2,11 +2,11 @@
 import type { RouteRecordRaw } from 'vue-router'
 import type { MenuNode } from 'aeria-ui'
 import { getGlobalStateManager } from '@aeria-ui/state-management'
-import { isCollapsibleRouteOpen, routeClick } from '../utils.js'
+import { isCollapsibleRouteOpen, routeClick } from '@aeria-ui/theme'
 import NavbarEntry from '../navbar-entry/navbar-entry.vue'
 
 type Props = {
-  item: MenuNode & RouteRecordRaw
+  item: MenuNode
   memoKey: string
   level?: number
 }

@@ -20,11 +20,9 @@
   "author": "",
   "license": "ISC",
   "peerDependencies": {
+    "@aeria-ui/theme": "0.0",
     "aeria-ui": "0.0",
     "vue": "3"
-  },
-  "devDependencies": {
-    "@aeria-ui/theme": "~0.0.61"
   },
   "dependencies": {
     "less": "^4.2.0"

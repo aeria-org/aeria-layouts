@@ -1,5 +1,11 @@
 # aeria-app-layout
 
+## 0.0.45
+
+### Patch Changes
+
+- 446b747: Update deps
+
 ## 0.0.44
 
 ### Patch Changes

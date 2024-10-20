@@ -1,5 +1,11 @@
 # aeria-app-layout
 
+## 0.0.44
+
+### Patch Changes
+
+- c8ef156: Use `@aeria-ui/theme`
+
 ## 0.0.43
 
 ### Patch Changes

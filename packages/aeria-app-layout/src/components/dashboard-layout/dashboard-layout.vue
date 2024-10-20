@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useNavbar, meta, user, type MenuSchema } from '@aeria-ui/core'
+import { useNavbar, type meta, type user, type MenuSchema } from '@aeria-ui/core'
 import { useStore, getGlobalStateManager } from '@aeria-ui/state-management'
 import { t } from '@aeria-ui/i18n'
 import { inject, computed, watch, unref, type Ref } from 'vue'

@@ -1,6 +1,6 @@
 import type { Router, RouteRecordRaw } from 'vue-router'
 import type { MenuNode, GlobalStateManager } from 'aeria-ui'
-import { useBreakpoints, useNavbar } from '@aeria-ui/core'
+import { useBreakpoints, useNavbar, type meta } from '@aeria-ui/core'
 import { useStore } from '@aeria-ui/state-management'
 import { reactive, toRefs } from 'vue'
 
@@ -25,7 +25,7 @@ export const memoizeBadge = (promise: () => Promise<any> | any, key: string) => 
 
 export const pushRoute = (manager: GlobalStateManager, ...args: Parameters<Router['push']>) => {
   if( !breakpoints.value.md ) {
-    const metaStore = useStore('meta', manager)
+    const metaStore = useStore('meta', manager) as ReturnType<typeof meta>
     metaStore.menu.visible = false
   }
 

@@ -1,5 +1,12 @@
 # aeria-app-layout
 
+## 0.0.43
+
+### Patch Changes
+
+- 01810fc: Fix build errors
+- a7aa14b: Update Vue
+
 ## 0.0.42
 
 ### Patch Changes

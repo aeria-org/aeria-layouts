@@ -1,5 +1,11 @@
 # aeria-app-layout
 
+## 0.0.42
+
+### Patch Changes
+
+- 186f65d: Visual fixes
+
 ## 0.0.41
 
 ### Patch Changes

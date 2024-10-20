@@ -24,7 +24,7 @@
     "vue": "3"
   },
   "devDependencies": {
-    "@aeria-ui/theme": "~0.0.31"
+    "@aeria-ui/theme": "~0.0.61"
   },
   "dependencies": {
     "less": "^4.2.0"

@@ -150,12 +150,9 @@
 
   &__view {
     .section-padding();
+    .outer-padding();
     max-width: 100%;
     color: var(--theme-foreground-color);
-
-    &--padded {
-      .outer-padding();
-    }
 
     :deep(&>section) {
       .section-padding();

@@ -18,11 +18,11 @@ const props = withDefaults(defineProps<Props>(), {
 
 <template>
   <div
-    :class="`
-      navbar__route
-      ${isCurrent(item) && 'navbar__route--current'}
-      ${level > 0 && 'navbar__route--sub'}
-    `"
+    :class="[
+      'navbar__route',
+      { 'navbar__route--current': isCurrent(item) },
+      { 'navbar__route--sub': level > 0  },
+    ]"
 
     :style="`--level-padding: ${level};`"
   >

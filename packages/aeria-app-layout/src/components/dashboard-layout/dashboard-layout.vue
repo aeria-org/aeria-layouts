@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useNavbar, type MenuSchema } from '@aeria-ui/core'
+import { useNavbar, meta, user, type MenuSchema } from '@aeria-ui/core'
 import { useStore, getGlobalStateManager } from '@aeria-ui/state-management'
 import { t } from '@aeria-ui/i18n'
 import { inject, computed, watch, unref, type Ref } from 'vue'
@@ -18,8 +18,8 @@ import NavbarEntries from '../navbar-entries/navbar-entries.vue'
 
 const menuSchema = inject<MenuSchema | Ref<MenuSchema>>('menuSchema', [])
 
-const metaStore = useStore('meta')
-const userStore = useStore('user')
+const metaStore = useStore('meta') as ReturnType<typeof meta>
+const userStore = useStore('user') as ReturnType<typeof user>
 
 const manager = getGlobalStateManager()
 
@@ -47,11 +47,11 @@ const parentRoutes = computed(() => {
     dashboard
     aeria-body
   ">
-    <div :class="`
-      no-print
-      dashboard__sidebar
-      ${ metaStore.menu.visible && 'dashboard__sidebar--visible' }
-    `">
+    <div :class="[
+      'no-print',
+      'dashboard__sidebar',
+      { 'dashboard__sidebar--visible': metaStore.menu.visible },
+    ]">
       <div class="dashboard__navbar-top">
         <aeria-icon
           v-if="!breakpoints.md"
@@ -191,10 +191,7 @@ const parentRoutes = computed(() => {
 
       </div>
 
-      <div :class="{
-        'dashboard__view': true,
-        'dashboard__view--padded': !$route.meta.fill
-      }">
+      <div class="dashboard__view">
         <router-view
           v-if="!breakpoints.md"
           name="topbar"

@@ -1,5 +1,11 @@
 # aeria-app-layout
 
+## 0.0.46
+
+### Patch Changes
+
+- 34e0068: Fix topbar picture
+
 ## 0.0.45
 
 ### Patch Changes

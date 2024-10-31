@@ -7,17 +7,17 @@
     "postinstall": "husky; find packages -mindepth 1 -maxdepth 1 | xargs -n1 cp -r .aeria-ui; rm -rf .aeria-ui"
   },
   "devDependencies": {
-    "@aeria-ui/ui": "^0.0.123",
+    "@aeria-ui/ui": "^0.0.130",
     "@changesets/cli": "^2.27.9",
     "@commitlint/cli": "^19.5.0",
     "@commitlint/config-conventional": "^19.5.0",
-    "@types/node": "^22.7.7",
+    "@types/node": "^22.8.4",
     "@vitejs/plugin-vue": "^5.1.4",
     "husky": "^9.1.6",
     "rollup-plugin-typescript2": "^0.36.0",
     "typescript": "^5.6.3",
-    "vite": "^5.4.9",
-    "vite-plugin-dts": "^4.2.4",
-    "vue-tsc": "^2.1.6"
+    "vite": "^5.4.10",
+    "vite-plugin-dts": "^4.3.0",
+    "vue-tsc": "^2.1.10"
   }
 }

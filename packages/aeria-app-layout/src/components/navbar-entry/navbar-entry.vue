@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import type { RouteRecordRaw } from 'vue-router'
 import type { MenuNode } from 'aeria-ui'
 import { t } from '@aeria-ui/i18n'
 import { AeriaIcon, AeriaBadge, AeriaAsync } from '@aeria-ui/ui'
 import { isCurrent, memoizeBadge, isCollapsibleRouteOpen } from '@aeria-ui/theme'
+import { onMounted, ref } from 'vue'
 
 type Props = {
   item: MenuNode
@@ -11,8 +11,20 @@ type Props = {
   level?: number
 }
 
-withDefaults(defineProps<Props>(), {
+const props = withDefaults(defineProps<Props>(), {
   level: 0
+})
+
+let badgePromise: Promise<unknown> | undefined
+const badgeReady = ref(false)
+
+onMounted(() => {
+  if( props.item.badge ) {
+    badgePromise = memoizeBadge(props.item.badge, props.memoKey)
+    badgePromise.then(() => {
+      badgeReady.value = true
+    })
+  }
 })
 </script>
 
@@ -36,8 +48,8 @@ withDefaults(defineProps<Props>(), {
       {{ t(item.meta!.title, { plural: true, capitalize: true }) }}
     </aeria-icon>
 
-    <aeria-badge v-if="item.badge" alt>
-      <aeria-async :promise="memoizeBadge(item.badge, memoKey)"></aeria-async>
+    <aeria-badge v-if="item.badge && badgeReady" alt>
+      <aeria-async :promise="badgePromise"></aeria-async>
     </aeria-badge>
 
     <div v-if="'collapsed' in item">

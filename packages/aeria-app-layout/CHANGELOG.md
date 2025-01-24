@@ -1,5 +1,11 @@
 # aeria-app-layout
 
+## 0.0.47
+
+### Patch Changes
+
+- 879d52d: Fix menu badges
+
 ## 0.0.46
 
 ### Patch Changes
